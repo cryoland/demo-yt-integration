@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33723.286
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoYtIntegration", "DemoYtIntegration.csproj", "{B04E863F-04A3-4E69-8CB7-FA4A0BE7A33D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoYtIntegration", "DemoYtIntegration\DemoYtIntegration.csproj", "{B04E863F-04A3-4E69-8CB7-FA4A0BE7A33D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoYtIntegrationTests", "..\DemoYtIntegrationTests\DemoYtIntegrationTests.csproj", "{CC8A0526-0A68-4DE8-9243-87C7F5BAA871}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoYtIntegrationTests", "DemoYtIntegrationTests\DemoYtIntegrationTests.csproj", "{CC8A0526-0A68-4DE8-9243-87C7F5BAA871}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
