@@ -18,7 +18,7 @@ jobs:
       matrix:
         configuration: [Debug]
 
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latst
     
     steps:
     - name: Checkout code
