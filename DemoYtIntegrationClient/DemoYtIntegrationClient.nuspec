@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+
+    <id>DemoYtIntegrationClient</id>
+    <version>1.0.0</version>
+    <title>DemoYtIntegration C# Client</title>
+    <authors>ValenTiN Konov</authors>
+    <description>Generated client of Test Project</description>
+    <summary>
+      Generated C# client of project for investigation purposes
+    </summary>
+    <releaseNotes>
+      Update Open API specification and generated clients.
+    </releaseNotes>
+
+    <projectUrl>https://github.com/cryoland/demo-yt-integration</projectUrl>
+    <repository type="git" url="https://github.com/cryoland/demo-yt-integration.git" branch="main" />
+
+    <license type="expression">MIT</license>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <tags>test project csharp dotnet</tags>
+    <icon>icon.png</icon>
+    <readme>README.md</readme>
+
+    <packageTypes>
+      <packageType name="Dependency" />
+    </packageTypes>
+
+  </metadata>
+
+  <files>
+    <file src="..\static\icon.png" />
+    <file src="..\README.md" />
+    <file src=".\**" target="content" exclude="**\node_modules\**;**\bin\**;**\obj\**;.\.vs\**;.\.vscode\**;**\ClientApp\dist\**;**\wwwroot\dist\**;content\Directory.Build.*;.\.git\**;.\.github\workflows\dotnet-desktop.yml;.\.github\icon.png;..\LICENSE;..\README.md;" />
+  </files>
+
+</package>

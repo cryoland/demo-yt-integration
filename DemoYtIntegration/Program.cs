@@ -8,13 +8,26 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// OpenAPI
+builder.Configuration.AddJsonFile($"nswag.json", optional: false, reloadOnChange: true);
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddOpenApiDocument(settings =>
+{
+    settings.Title = builder.Configuration["documentGenerator:aspNetCoreToOpenApi:infoTitle"];
+    settings.DocumentName = builder.Configuration["documentGenerator:aspNetCoreToOpenApi:documentName"];
+    settings.Version = builder.Configuration["documentGenerator:aspNetCoreToOpenApi:infoVersion"];
+    settings.GenerateExamples = true;
+    settings.UseControllerSummaryAsTagDescription = true;
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseOpenApi();
+    app.UseSwaggerUi3();
+    app.UseReDoc();
 }
 
 var summaries = new[]
