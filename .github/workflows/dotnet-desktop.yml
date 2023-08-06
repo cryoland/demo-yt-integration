@@ -2,18 +2,20 @@ name: Build
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "develop" ]
     paths-ignore:
       - .gitignore
+      - LICENSE
+      - README.md
   pull_request:
-    branches: [ "main" ]
+    branches: [ "develop" ]
     paths-ignore:
       - .gitignore
+      - LICENSE
+      - README.md
 
 jobs:
-
   build:
-
     strategy:
       matrix:
         configuration: [Debug]
@@ -22,15 +24,7 @@ jobs:
     
     steps:
     - name: Checkout code
-      uses: actions/checkout@v3
-
-    - name: Cache NuGet packages
-      uses: actions/cache@v3
-      with:
-        path: ~/.nuget/packages
-        key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
-        restore-keys: |
-          ${{ runner.os }}-nuget-      
+      uses: actions/checkout@v3     
 
     - name: Install .NET
       uses: actions/setup-dotnet@v3
@@ -38,11 +32,10 @@ jobs:
         dotnet-version: 7.0.x
 
     - name: Restore solution
-      run: dotnet restore
+      run: dotnet restore    
 
     - name: Build solution
       run: dotnet build --no-restore --configuration Debug
       
     - name: Test solution
-      run: dotnet test --no-build --configuration Debug
-
+      run: dotnet test --no-build --configuration Debug      
